@@ -16,11 +16,12 @@ public class Workout {
                     "500 meter run\n21 x 1.5 pood kettleball swing\n21 x pull-ups")
     };
 
-
     public Workout(String name, String description) {
         this.name = name;
         this.description = description;
     }
+
+
 
     public String getName() {
         return name;
