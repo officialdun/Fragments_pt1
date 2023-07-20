@@ -21,7 +21,6 @@ public class WorkoutDetailFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_workout_detail, container, false);
 
 
-        //get uit
 
 
         return view;
