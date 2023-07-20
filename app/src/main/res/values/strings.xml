@@ -3,4 +3,6 @@
     <string name="show_details">show details</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="workout_title">Title</string>
+    <string name="workout_description">Description\n</string>
 </resources>
