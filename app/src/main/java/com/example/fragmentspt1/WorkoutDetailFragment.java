@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class WorkoutDetailFragment extends Fragment {
 
@@ -25,6 +26,24 @@ public class WorkoutDetailFragment extends Fragment {
 
         return view;
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        View view = getView();
+        if(view!=null){
+            TextView title = view.findViewById(R.id.title);
+            Workout workout = Workout.workouts[(int) workoutID];
+            title.setText(workout.getName());
+            TextView description = view.findViewById(R.id.description);
+            description.setText(workout.getDescription());
+        }
+
+
+    }
+
 
     public void setWorkout(long id){
         this.workoutID = id;
