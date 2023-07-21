@@ -10,10 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class WorkoutDetailFragment extends Fragment {
-
     private long workoutID;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,11 +19,8 @@ public class WorkoutDetailFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_workout_detail, container, false);
 
 
-
-
         return view;
     }
-
 
     @Override
     public void onStart() {
@@ -40,8 +34,6 @@ public class WorkoutDetailFragment extends Fragment {
             TextView description = view.findViewById(R.id.description);
             description.setText(workout.getDescription());
         }
-
-
     }
 
 
