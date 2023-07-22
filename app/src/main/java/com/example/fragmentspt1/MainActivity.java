@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
     }
 
     public void itemClicked(long id){
+
+
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID, (int) id);
         startActivity(intent);
