@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
 
     public void itemClicked(long id){
 
-//        Toast.makeText(this, String.valueOf(id), Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID, (int) id);
         startActivity(intent);
