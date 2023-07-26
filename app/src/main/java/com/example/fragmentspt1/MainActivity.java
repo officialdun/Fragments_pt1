@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity implements WorkoutListFragment.Listener{
 
@@ -16,10 +16,15 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
     }
 
     public void itemClicked(long id){
+        View fragmentCOntainer = findViewById(R.id.fragment_container);
+        if (fragmentCOntainer!=null){
 
+        }else {
 
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID, (int) id);
-        startActivity(intent);
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID, (int) id);
+            startActivity(intent);
+        }
+
     }
 }
