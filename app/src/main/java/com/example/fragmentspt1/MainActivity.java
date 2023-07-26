@@ -1,6 +1,7 @@
 package com.example.fragmentspt1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,15 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
     public void itemClicked(long id){
         View fragmentCOntainer = findViewById(R.id.fragment_container);
         if (fragmentCOntainer!=null){
+            WorkoutDetailFragment details = new WorkoutDetailFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            details.setWorkout(id);
+            transaction.replace(R.id.fragment_container,details);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.addToBackStack(null);
+            transaction.commit();
+
+
 
         }else {
 
