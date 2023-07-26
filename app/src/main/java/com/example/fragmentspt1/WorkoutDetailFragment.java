@@ -2,6 +2,7 @@ package com.example.fragmentspt1;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,6 +16,10 @@ public class WorkoutDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if(savedInstanceState !=null){
+            workoutID = savedInstanceState.getLong("id");
+
+        }
 
         View view =  inflater.inflate(R.layout.fragment_workout_detail, container, false);
 
@@ -39,5 +44,11 @@ public class WorkoutDetailFragment extends Fragment {
 
     public void setWorkout(long id){
         this.workoutID = id;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putLong("id",workoutID);
     }
 }
