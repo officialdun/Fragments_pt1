@@ -70,6 +70,7 @@ public class stopwatchFragment extends Fragment {
         Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 running = false;
             }
         });
