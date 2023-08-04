@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class stopwatchFragment extends Fragment {
+public class stopwatchFragment extends Fragment implements View.OnClickListener {
 
     private int seconds = 0;
     private boolean running;
@@ -39,14 +39,17 @@ public class stopwatchFragment extends Fragment {
         }
 
 
-       // runTimer();
+
          layout =   inflater.inflate(R.layout.fragment_stopwatch, container, false);
 
 
         if (layout!=null){
             Start = layout.findViewById(R.id.startBtn);
+            Start.setOnClickListener(this);
             reset = layout.findViewById(R.id.resetBtn);
+            reset.setOnClickListener(this);
             Stop = layout.findViewById(R.id.stopBtn);
+            Stop.setOnClickListener(this);
 
 
 
@@ -58,22 +61,6 @@ public class stopwatchFragment extends Fragment {
             }
         });
 
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                running = false;
-                seconds = 0;
-
-            }
-        });
-
-        Stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                running = false;
-            }
-        });
         }
 
       runTimer(layout);
@@ -104,9 +91,7 @@ public class stopwatchFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-       if( wasRunning ){
 
-        running = true;}
 
         Toast.makeText(getContext(), String.valueOf(wasRunning), Toast.LENGTH_SHORT).show();
     }
@@ -131,5 +116,38 @@ public class stopwatchFragment extends Fragment {
 
 
 
+    }
+
+    @Override
+    public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.startBtn:
+                    onClickStart();
+                     break;
+
+                case R.id.stopBtn:
+                    onClickStop();
+                    break;
+                case R.id.resetBtn:
+                    onClickReset();
+                    break;
+
+            }
+
+    }
+
+
+
+    private void onClickStart(){
+
+
+    }
+    private void onClickStop(){
+        running = false;
+
+    }
+    private void onClickReset(){
+        running = false;
+        seconds = 0;
     }
 }
